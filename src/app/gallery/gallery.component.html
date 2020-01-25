@@ -1,0 +1,47 @@
+<div class="container gallery-wrapper">
+  <div class="container">
+    <div class="button-wrapper">
+      <button
+        class="btn btn-dark"
+        [class.active]="filterBy === 'all'"
+        (click)="filterBy = 'all'"
+      >
+        All
+      </button>
+      <button
+        class="btn btn-dark"
+        [class.active]="filterBy === 'cats'"
+        (click)="filterBy = 'cats'"
+      >
+        Cats
+      </button>
+      <button
+        class="btn btn-dark"
+        [class.active]="filterBy === 'cows'"
+        (click)="filterBy = 'cows'"
+      >
+        Cows
+      </button>
+      <button
+        class="btn btn-dark"
+        [class.active]="filterBy === 'other'"
+        (click)="filterBy = 'other'"
+      >
+        Other
+      </button>
+    </div>
+    <div class="row">
+      <!-- *ngForOf - a structural directive - these shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements. -->
+      <div
+        class="col-lg-3 col-md-4 col-sm-6 image-column"
+        *ngFor="let image of visibleImages | imageFilter: filterBy"
+      >
+        <a [routerLink]="['/image', image.id]">
+          <img src="{{ image.src }}" alt=""
+        /></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- [] this is what we bind to -->

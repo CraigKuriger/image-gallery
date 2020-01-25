@@ -1,0 +1,17 @@
+$box-shadow: #999;
+
+div.image-wrapper {
+  margin-top: 64px;
+  padding-top: 40px;
+  div.image-row {
+    padding: 40px 0;
+    box-shadow: $box-shadow 1px 1px 8px 1px;
+  }
+  img {
+    width: 100%;
+    box-shadow: $box-shadow 1px 1px 8px 1px;
+  }
+  div.image-caption {
+    margin-top: 40px;
+  }
+}
